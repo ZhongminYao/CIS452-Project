@@ -1,2 +1,2 @@
 # CIS454-Project
-An android app developed with Andriod Studio and Firebase
+An web app developed with html and Firebase
