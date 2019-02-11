@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Welcome</title>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/5.8.2/firebase-app.js"></script>
@@ -19,7 +19,7 @@
     <link href="signin.css" rel="stylesheet">
     <!--link rel="stylesheet" type="text/css" href="stylesheet.css"-->
 
-    
+
   </head>
   <body class="text-center">
     <form class="form-signin">
@@ -36,12 +36,27 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
-      
+
       <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
       <a href="https://www.google.com"><div onclick="auth()" id="signin" class="btn btn-lg btn-primary btn-block">Sign in</div></a>
-      
+
       <p class="mt-5 mb-3 text-muted">&copy; 2019-1999</p>
     </form>
+
+    // Should be the connection to the actual app? Not sure if in the right place
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAmEbdMxefi-2wt7u8_hrFHLixM_RCLmwE",
+      authDomain: "cis-454.firebaseapp.com",
+      databaseURL: "https://cis-454.firebaseio.com",
+      projectId: "cis-454",
+      storageBucket: "cis-454.appspot.com",
+      messagingSenderId: "737490005392"
+    };
+    firebase.initializeApp(config);
+  </script>
 
     <script>
      function auth(){
