@@ -28,6 +28,7 @@ function isUserSignedIn() {
 function authStateObserver(user) {
   if (user) {
     window.location = "https://cis-454.firebaseapp.com/home.html";
+    window.reload();
   }
 }
 // Shortcuts to DOM Elements.
