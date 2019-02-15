@@ -1,7 +1,7 @@
 html,
 
 main{
-  color: white;
+  color: black;
 }
 
 header {
@@ -16,10 +16,6 @@ header {
 }
 header * {
   display: inline;
-}
-
-header li a right{
-  color: black;
 }
 
 header li{
