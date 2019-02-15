@@ -18,6 +18,10 @@ header * {
   display: inline;
 }
 
+header li a right{
+  color: black;
+}
+
 header li{
   margin: 20px;
 
