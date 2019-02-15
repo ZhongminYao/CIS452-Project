@@ -27,7 +27,8 @@ function isUserSignedIn() {
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
 function authStateObserver(user) {
   if (user) {
-    window.location.replace("./home.html");
+    window.location = "https://cis-454.firebaseapp.com/home.html";
+    window.reload();
   }
 }
 // Shortcuts to DOM Elements.
