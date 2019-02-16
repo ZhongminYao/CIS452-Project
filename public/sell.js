@@ -1,0 +1,33 @@
+var dbElement = document.getElementById('submit');
+dbElement.addEventListener('click', upload);
+
+var TBElement = document.getElementById('TBname');
+var AElement = document.getElementById('Aname');
+var PElement = document.getElementById('price');
+
+var config = {
+                  apiKey: "AIzaSyAmEbdMxefi-2wt7u8_hrFHLixM_RCLmwE",
+                  authDomain: "cis-454.firebaseapp.com",
+                  databaseURL: "https://cis-454.firebaseio.com",
+                  projectId: "cis-454",
+                  storageBucket: "cis-454.appspot.com",
+                  messagingSenderId: "737490005392"
+                };
+
+                firebase.initializeApp(config);
+
+var db = firebase.firestore();
+
+function upload() {
+  // Add a new message entry to the Firebase database.
+  if (TBElement.value && AElement.value && PElement.value) {
+    return db.collection('Textbooks').add({
+      Title: TBElement.value,
+      Author: AElement.value,
+      Price: PElement.value
+   }).catch(function(error) {
+     console.error('Error writing new message to Firebase Database', error);
+   });
+  }
+  
+}
