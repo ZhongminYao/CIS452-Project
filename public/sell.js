@@ -1,5 +1,5 @@
 var dbElement = document.getElementById('submit');
-dbElement.addEventListener('click', upload);
+dbElement.addEventListener('click', reload);
 
 var TBElement = document.getElementById('TBname');
 var AElement = document.getElementById('Aname');
@@ -18,9 +18,19 @@ var config = {
 
 var db = firebase.firestore();
 
+function reload(){
+  if (TBElement.value && AElement.value && PElement.value) {
+    upload().then(function(){
+      window,location.reload();
+   });
+    window.alert('You have successfully add this textbook to store!');
+  }
+  else window,location.reload();
+}
+
+
 function upload() {
   // Add a new message entry to the Firebase database.
-  if (TBElement.value && AElement.value && PElement.value) {
     return db.collection('Textbooks').add({
       Title: TBElement.value,
       Author: AElement.value,
@@ -28,6 +38,4 @@ function upload() {
    }).catch(function(error) {
      console.error('Error writing new message to Firebase Database', error);
    });
-  }
-  
 }
