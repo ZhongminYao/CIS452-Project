@@ -16,8 +16,46 @@
             </ul>
           </nav>
         </header>
+        <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAmEbdMxefi-2wt7u8_hrFHLixM_RCLmwE",
+            authDomain: "cis-454.firebaseapp.com",
+            databaseURL: "https://cis-454.firebaseio.com",
+            projectId: "cis-454",
+            storageBucket: "cis-454.appspot.com",
+            messagingSenderId: "737490005392"
+          };
+          firebase.initializeApp(config);
+        </script>
         <main>
-          <p style="color: black;"> Buy page </p>
         </main>
+        <table style="width:100%" id="purchase-table">
+          <tr id="tr">
+            <th>Book:</th>
+            <th>Author:</th>
+            <th>Price:</th>
+            <th>Description:</th>
+         </table>
+
+        <script>
+            var database = firebase.database();
+            database.collection('Textbooks').ref().once('value', function(snapshot){
+                if(snapshot.exists()){
+                    var content = '';
+                    snapshot.forEach(function(data){
+                        var val = data.val();
+                        content +='<tr>';
+                        content += '<td>' + val.Title + '</td>';
+                        content += '<td>' + val.Author + '</td>';
+                        content += '<td>' + val.Price + '</td>';
+                        content += '<td>' + val.Description + '</td>';
+                        content += '</tr>';
+                    });
+                    $('#purchase-table').append(content);
+                }
+            });
+        </script>
       </body>
     </html>
