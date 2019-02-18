@@ -31,7 +31,7 @@ Use the link above to create a project, then go to CIS454-Project1 file from our
 to sync the file with firebase project you just created.
 *** Enter "default" when asking about staging!
 
-Now you are ready to start local host!
+Now you are ready to start a local hosting!
 
 Run locally using 
 
