@@ -19,13 +19,16 @@ var config = {
 var db = firebase.firestore();
 
 function reload(){
-  if (TBElement.value && AElement.value && PElement.value) {
+  if (TBElement.value && AElement.value && PElement.value>0) {
     upload().then(function(){
       window,location.reload();
    });
     window.alert('You have successfully add this textbook to store!');
   }
-  else window,location.reload();
+  else {
+    window.alert('Please enter all fields and price must be valid!');
+    window,location.reload();
+  }
 }
 
 

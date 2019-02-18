@@ -45,6 +45,14 @@
             resize: vertical;
           }
 
+          input[type=number], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+          }
+
           label {
             padding: 12px 12px 12px 0;
             display: inline-block;
@@ -128,7 +136,7 @@
                   <label for="Aname">Price: </label>
                 </div>
                 <div class="col-75">
-                  <input type="text" id="price" placeholder="Price...">
+                  <input type="number" step="0.01" min="0.01" id="price" placeholder="Price...">
                 </div>
               </div>
 
