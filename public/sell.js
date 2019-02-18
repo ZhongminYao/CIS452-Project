@@ -37,7 +37,8 @@ function upload() {
     return db.collection('Textbooks').add({
       Title: TBElement.value,
       Author: AElement.value,
-      Price: PElement.value
+      Price: PElement.value,
+      Status: "Active"
    }).catch(function(error) {
      console.error('Error writing new message to Firebase Database', error);
    });
