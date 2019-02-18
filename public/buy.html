@@ -52,6 +52,31 @@
           });
         }
         </script>
+
+        <style>
+
+          table {
+            width: 100%;
+            height: 50px;
+            text-align: left;
+            border-collapse: collapse;
+
+          }
+
+          table thead {
+             padding-top: 20px;
+             padding-bottom: 20px;
+             text-align: left;
+             background-color: #778899;
+             color: white;
+          }
+
+          table th, td{
+            border: 1px solid #ddd;
+            padding: 8px;
+          }
+
+        </style>
       </head>
       <body>
         <header>
@@ -77,22 +102,22 @@
           firebase.initializeApp(config);
         </script>
         <main>
+          <table id="table">
+            <thead>
+          	  <tr>
+          	    <th>Title</th>
+          	    <th>Author</th>
+          	    <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <script>
+              createTable();
+              </script>
+            </tbody>
+        	</table>
         </main>
-        <table style="width:100%" id="table">
-          <thead>
-        	  <tr>
-        	    <th>Title</th>
-        	    <th>Author</th>
-        	    <th>Price</th>
-            </tr>
-          </thead>
-          <tbody style="width: 100%">
-            <script>
-            createTable();
 
-            </script>
-          </tbody>
-      	</table>
 
       </body>
     </html>
