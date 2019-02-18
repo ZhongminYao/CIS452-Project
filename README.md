@@ -16,4 +16,4 @@ Deploy using
   firebase deploy
 ```
 
-Once deployed, the site will be hosted on https://cis-454.firebaseapp.com/home.html. 
+Once deployed, the site will be hosted on https://cis-454.firebaseapp.com. 
