@@ -51,6 +51,50 @@
             });
           });
         }
+            
+            function createTableSearch(){ 
+          var searchInput = document.getElementById('search');
+
+          var node = document.getElementById("tbdy");
+          while (node.hasChildNodes()) {
+            node.removeChild(node.lastChild);
+          }
+
+          var db = firebase.firestore();
+          var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
+
+          // get snapshot of textbooks
+          db.collection('Textbooks').get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc){
+            // doc.data() is never undefined for query doc snapshots
+            var data = doc.data();
+            // get individual fields
+            if(data.Title.includes(searchInput.value) || data.Author.includes(searchInput.value)){
+              var title = data.Title;
+              var author = data.Author;
+              var price = data.Price;
+
+              // Insert a row in the table at the last row
+              var newRow = tableRef.insertRow(tableRef.rows.length);
+
+              // Insert 3 cells in the row
+              var cell1 = newRow.insertCell(0);
+              var cell2 = newRow.insertCell(1);
+              var cell3 = newRow.insertCell(2);
+
+              // Append a text node to the cell
+              var text1 = document.createTextNode(title);
+              var text2 = document.createTextNode(author);
+              var text3 = document.createTextNode(price);
+
+              cell1.appendChild(text1);
+              cell2.appendChild(text2);
+              cell3.appendChild(text3);
+              }
+           });
+         });
+        }
+
         </script>
 
         <style>
@@ -79,6 +123,53 @@
         </style>
       </head>
       <body>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        * {box-sizing: border-box;}
+
+        .topnav .search-container {
+          float: right;
+        }
+
+        .topnav input[type=text] {
+          padding: 6px;
+          margin-top: 8px;
+          font-size: 17px;
+          border: none;
+        }
+
+        .topnav .search-container button {
+          float: right;
+          padding: 6px 10px;
+          margin-top: 8px;
+          margin-right: 16px;
+          background: #ddd;
+          font-size: 17px;
+          border: none;
+          cursor: pointer;
+        }
+
+        .topnav .search-container button:hover {
+          background: #ccc;
+        }
+
+        @media screen and (max-width: 600px) {
+          .topnav .search-container {
+            float: none;
+          }
+          .topnav a, .topnav input[type=text], .topnav .search-container button {
+            float: none;
+            display: block;
+            text-align: left;
+            width: 100%;
+            margin: 0;
+            padding: 14px;
+          }
+          .topnav input[type=text] {
+            border: 1px solid #ccc;
+          }
+        }
+        </style>
         <header>
           <nav>
             <ul>
@@ -88,6 +179,15 @@
               <li><a href="./sell.html">Sell</a></li>
             </ul>
           </nav>
+            <div class="topnav">
+           
+            <div class="search-container">
+              <form action="/action_page.php">
+                <input type="text" placeholder="Search.." id="search">
+                <button type="button" onclick="createTableSearch()"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+          </div>
         </header>
         <script>
           // Initialize Firebase
@@ -110,7 +210,7 @@
           	    <th>Price</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="tbdy">
               <script>
               createTable();
               </script>
