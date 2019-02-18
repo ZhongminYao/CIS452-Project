@@ -1,0 +1,43 @@
+html,
+
+main{
+  color: black;
+}
+
+header {
+  background-color: #87CEFA;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+header * {
+  display: inline;
+}
+
+header li{
+  margin: 20px;
+
+}
+
+header li a:hover{
+  color: #778899;
+}
+
+header li a{
+  color: white;
+  text-decoration: none;
+  font-size: 28pt;
+  font-family: Georgia;
+}
+
+body {
+  height: 125vh;
+  background-size: cover;
+  margin-top: 80px;
+  padding: 30px;
+  background-color: white;
+}
