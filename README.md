@@ -13,7 +13,7 @@ Run locally using
 Deploy using 
 
 ```
-  firebase deploy
+  firebase deploy --except functions
 ```
 
 Once deployed, the site will be hosted on https://cis-454.firebaseapp.com. 
