@@ -4,6 +4,7 @@ dbElement.addEventListener('click', reload);
 var TBElement = document.getElementById('TBname');
 var AElement = document.getElementById('Aname');
 var PElement = document.getElementById('price');
+var Description = document.getElementById('description');
 
 var config = {
                   apiKey: "AIzaSyAmEbdMxefi-2wt7u8_hrFHLixM_RCLmwE",
@@ -19,7 +20,7 @@ var config = {
 var db = firebase.firestore();
 
 function reload(){
-  if (TBElement.value && AElement.value && PElement.value>0) {
+  if (TBElement.value && AElement.value && PElement.value>0 && Description.value) {
     upload().then(function(){
       window,location.reload();
    });
@@ -38,6 +39,7 @@ function upload() {
       Title: TBElement.value,
       Author: AElement.value,
       Price: PElement.value,
+      Description: Description.value,
       Status: "Active"
    }).catch(function(error) {
      console.error('Error writing new message to Firebase Database', error);
