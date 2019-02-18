@@ -26,9 +26,9 @@ function isUserSignedIn() {
 
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
 function authStateObserver(user) {
-  if (user) { 
-    window.location.replace("http://www.google.com");
-  } 
+  if (user) {
+    window.location.replace("https://cis-454.firebaseapp.com/home.html");
+  }
 }
 // Shortcuts to DOM Elements.
 
@@ -40,7 +40,7 @@ signInButtonElement.addEventListener('click', signIn);
 // initialize Firebase
 initFirebaseAuth();
 
-// Remove the warning about timstamps change. 
+// Remove the warning about timstamps change.
 var firestore = firebase.firestore();
 var settings = {timestampsInSnapshots: true};
 firestore.settings(settings);
