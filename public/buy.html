@@ -15,9 +15,20 @@
         <!-- initialize the SDK after all desired features are loaded -->
         <script defer src="/__/firebase/init.js"></script>
         <script>
+            // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAmEbdMxefi-2wt7u8_hrFHLixM_RCLmwE",
+            authDomain: "cis-454.firebaseapp.com",
+            databaseURL: "https://cis-454.firebaseio.com",
+            projectId: "cis-454",
+            storageBucket: "cis-454.appspot.com",
+            messagingSenderId: "737490005392"
+          };
+          firebase.initializeApp(config);
+          var db = firebase.firestore();
         // create database object
         function createTable(){
-          var db = firebase.firestore();
+
           var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
 
         // get snapshot of textbooks
@@ -60,7 +71,6 @@
             node.removeChild(node.lastChild);
           }
 
-          var db = firebase.firestore();
           var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
 
           // get snapshot of textbooks
@@ -189,18 +199,6 @@
             </div>
           </div>
         </header>
-        <script>
-          // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyAmEbdMxefi-2wt7u8_hrFHLixM_RCLmwE",
-            authDomain: "cis-454.firebaseapp.com",
-            databaseURL: "https://cis-454.firebaseio.com",
-            projectId: "cis-454",
-            storageBucket: "cis-454.appspot.com",
-            messagingSenderId: "737490005392"
-          };
-          firebase.initializeApp(config);
-        </script>
         <main>
           <table id="table">
             <thead>
