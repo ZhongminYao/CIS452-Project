@@ -24,3 +24,32 @@
 [warn] ⚠  hosting: Port 5000 is not available. Trying another port...
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5005
+[debug] [2019-02-19T16:37:54.096Z] ----------------------------------------------------------------------
+[debug] [2019-02-19T16:37:54.100Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only hosting
+[debug] [2019-02-19T16:37:54.100Z] CLI Version:   6.3.1
+[debug] [2019-02-19T16:37:54.100Z] Platform:      darwin
+[debug] [2019-02-19T16:37:54.100Z] Node Version:  v10.15.1
+[debug] [2019-02-19T16:37:54.177Z] Time:          Tue Feb 19 2019 11:37:54 GMT-0500 (Eastern Standard Time)
+[debug] [2019-02-19T16:37:54.177Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-02-19T16:37:54.228Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-02-19T16:37:54.228Z] > authorizing via signed-in user
+[debug] [2019-02-19T16:37:54.229Z] [iam] checking project cis-454 for permissions ["firebase.projects.get"]
+[debug] [2019-02-19T16:37:54.232Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-02-19T16:37:54.232Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-02-19T16:37:54.593Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-19T16:37:54.725Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/cis-454:testIamPermissions  
+
+[debug] [2019-02-19T16:37:54.985Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-19T16:37:54.987Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/cis-454  
+ 
+[debug] [2019-02-19T16:37:55.219Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/megi/Documents/CIS454/CIS454Project1/CIS454-Project1'...
+[info] 
+[debug] [2019-02-19T16:37:55.222Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/737490005392/clients/_:getWebAppConfig  
+ 
+[debug] [2019-02-19T16:37:55.735Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
