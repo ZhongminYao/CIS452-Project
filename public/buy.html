@@ -24,6 +24,8 @@
             storageBucket: "cis-454.appspot.com",
             messagingSenderId: "737490005392"
           };
+
+        // initialize the app and create a database object
           firebase.initializeApp(config);
           var db = firebase.firestore();
         // create database object
@@ -39,35 +41,60 @@
             // get individual fields
 
             if (data.Status == 'Active'){
+            var id = doc.snapshot.key;
+
             var title = data.Title;
             var author = data.Author;
             var price = data.Price;
             var desc = data.Description;
 
+
+
             // Insert a row in the table at the last row
             var newRow = tableRef.insertRow(tableRef.rows.length);
 
-            // Insert 3 cells in the row
+            // Insert 5 cells in the row
             var cell1 = newRow.insertCell(0);
             var cell2 = newRow.insertCell(1);
             var cell3 = newRow.insertCell(2);
             var cell4 = newRow.insertCell(3);
+            var cell5 = newRow.insertCell(4);
 
-            // Append a text node to the cell
-            var text1 = document.createTextNode(title);
+            // Append text nodes to the cells
+            var text1 = document.createTextNode(id);
             var text2 = document.createTextNode(author);
             var text3 = document.createTextNode(price);
             var text4 = document.createTextNode(desc);
+
+            var buy = document.createElement('input');
+            buy.type = 'button';
+            buy.className = 'buy';
+            buy.value = 'Buy';
+            //buy.onclick = buyFunc(id, title, author, price, desc);
 
             cell1.appendChild(text1);
             cell2.appendChild(text2);
             cell3.appendChild(text3);
             cell4.appendChild(text4);
+            cell5.appendChild(buy);
           }
+
+
 
             });
           });
+
         }
+
+        /*function buyFunc(num, title, author, price, desc){
+          return db.collection('Textbooks').doc(num).set({
+            id: num,
+            Title: title,
+            Author: author,
+            Description: desc,
+            Price: price,
+            Status: 'Sold'});
+        }*/
 
             function createTableSearch(){
           var searchInput = document.getElementById('search');
@@ -213,6 +240,7 @@
           	    <th>Author</th>
           	    <th>Price</th>
                 <th>Description</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody id="tbdy">
