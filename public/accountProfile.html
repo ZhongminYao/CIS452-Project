@@ -11,7 +11,7 @@
 }
 
 .ID {
-  color: rgb(20, 43, 173);
+  color: #000;
   font-size: 28px;
 }
 
@@ -31,7 +31,7 @@ button {
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #000;
+  background-color: #87CEFA;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -39,7 +39,7 @@ button {
 }
 
 button:hover {
-  background-color: blueviolet;
+  background-color: #778899;
   color:white;
   opacity: 0.7;
 }
@@ -47,13 +47,13 @@ button:hover {
 </head>
 <body>
 
-<h1 class= "Title" style="text-align:center">Account Information</h1>
+<h1 class= "Title" style="text-align:center; color:#87CEFA;">Account Information</h1>
 
 <div class="card">
 	<h1>User Name:</h1>
   <p class="ID">Account ID:</p>
   <p class="Google">Linked Google Account:</p>
-  <p><button>Done</button></p>
+  <p><button onclick="location.href = './home.html';">Done</button></p>
 </div>
 
 </body>

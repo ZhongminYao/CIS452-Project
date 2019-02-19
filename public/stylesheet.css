@@ -13,6 +13,7 @@ header {
   height: 60px;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 header * {
   display: inline;
@@ -23,6 +24,7 @@ header li{
 
 }
 
+
 header li a:hover{
   color: #778899;
 }
@@ -32,6 +34,17 @@ header li a{
   text-decoration: none;
   font-size: 28pt;
   font-family: Georgia;
+}
+
+header .nav{
+
+}
+.nav .nav-right{
+  display:inline;
+    right:0;
+    top:0;
+    float:right;
+    width:auto;
 }
 
 body {
