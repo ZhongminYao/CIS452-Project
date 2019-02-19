@@ -1,29 +1,26 @@
-[debug] [2019-02-19T14:11:10.902Z] ----------------------------------------------------------------------
-[debug] [2019-02-19T14:11:10.905Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only hosting
-[debug] [2019-02-19T14:11:10.905Z] CLI Version:   6.3.1
-[debug] [2019-02-19T14:11:10.905Z] Platform:      darwin
-[debug] [2019-02-19T14:11:10.905Z] Node Version:  v10.15.1
-[debug] [2019-02-19T14:11:10.910Z] Time:          Tue Feb 19 2019 09:11:10 GMT-0500 (Eastern Standard Time)
-[debug] [2019-02-19T14:11:10.910Z] ----------------------------------------------------------------------
+[debug] [2019-02-19T15:05:32.809Z] ----------------------------------------------------------------------
+[debug] [2019-02-19T15:05:32.811Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only hosting
+[debug] [2019-02-19T15:05:32.811Z] CLI Version:   6.3.1
+[debug] [2019-02-19T15:05:32.811Z] Platform:      darwin
+[debug] [2019-02-19T15:05:32.811Z] Node Version:  v10.15.1
+[debug] [2019-02-19T15:05:32.812Z] Time:          Tue Feb 19 2019 10:05:32 GMT-0500 (Eastern Standard Time)
+[debug] [2019-02-19T15:05:32.812Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-02-19T14:11:10.924Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-02-19T14:11:10.924Z] > authorizing via signed-in user
-[debug] [2019-02-19T14:11:10.924Z] [iam] checking project cis-454 for permissions ["firebase.projects.get"]
-[debug] [2019-02-19T14:11:10.926Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2019-02-19T14:11:10.927Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2019-02-19T14:11:11.163Z] <<< HTTP RESPONSE 200
-[debug] [2019-02-19T14:11:11.176Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/cis-454:testIamPermissions  
+[debug] [2019-02-19T15:05:32.825Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-02-19T15:05:32.826Z] > authorizing via signed-in user
+[debug] [2019-02-19T15:05:32.826Z] [iam] checking project cis-454 for permissions ["firebase.projects.get"]
+[debug] [2019-02-19T15:05:32.828Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/cis-454:testIamPermissions  
 
-[debug] [2019-02-19T14:11:11.481Z] <<< HTTP RESPONSE 200
-[debug] [2019-02-19T14:11:11.483Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/cis-454  
+[debug] [2019-02-19T15:05:33.168Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-19T15:05:33.170Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/cis-454  
  
-[debug] [2019-02-19T14:11:11.724Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-19T15:05:33.404Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/tyson/Desktop/454/CIS454-Project1'...
 [info] 
-[debug] [2019-02-19T14:11:11.729Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/737490005392/clients/_:getWebAppConfig  
+[debug] [2019-02-19T15:05:33.407Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/737490005392/clients/_:getWebAppConfig  
  
-[debug] [2019-02-19T14:11:12.221Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-19T15:05:33.699Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
 [info] i  hosting: Serving hosting files from: public
-[info] ✔  hosting: Local server: http://localhost:5000
+[info] ✔  hosting: Local server: http://localhost:5005
