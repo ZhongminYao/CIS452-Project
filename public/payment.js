@@ -1,10 +1,9 @@
-var dbElement = document.getElementById('submit');
+var dbElement = document.getElementById('Continue to checkout');
 dbElement.addEventListener('click', reload);
 
-var TBElement = document.getElementById('TBname');
-var AElement = document.getElementById('Aname');
-var PElement = document.getElementById('price');
-var Description = document.getElementById('description');
+var Method = document.getElementById('paymentmethod');
+var Price = document.getElementById('price');
+var TBName = document.getElementById('name');
 
 var config = {
                   apiKey: "AIzaSyAmEbdMxefi-2wt7u8_hrFHLixM_RCLmwE",
