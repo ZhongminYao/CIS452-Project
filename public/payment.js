@@ -7,6 +7,8 @@ var Year = Number(document.getElementById('expyear'));
 var Code = document.getElementById('cvv');
 var Card = document.getElementById('fname');
 var CYear = Number(new Date().getFullYear());
+var regex = /[0-9]{16}/;
+var regex2 = /[0-9]{3}/;
 
 var config = {
                   apiKey: "AIzaSyAmEbdMxefi-2wt7u8_hrFHLixM_RCLmwE",
@@ -22,7 +24,7 @@ var config = {
 var db = firebase.firestore();
 
 function reload(){
-  if (Card.value && Name.value && Number.value.length==16 && Code.value.length==3 && CYear.value<=Year.value) {
+  if (Card.value && Name.value && CNumber.value.match(regex) && Code.value.match(regex2) && CYear.value<=Year.value) {
     upload();
     window.alert('Your payment was successfull');
   }
