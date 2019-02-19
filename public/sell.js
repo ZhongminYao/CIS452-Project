@@ -24,7 +24,7 @@ function reload(){
     upload().then(function(){
       window,location.reload();
    });
-    window.alert('You have successfully add this textbook to store!');
+    window.alert('You have successfully added this textbook to store!');
   }
   else {
     window.alert('Please enter all fields and price must be valid!');
