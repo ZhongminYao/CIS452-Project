@@ -1,9 +1,12 @@
 var dbElement = document.getElementById('Continue to checkout');
 dbElement.addEventListener('click', reload);
 
-var Method = document.getElementById('paymentmethod');
-var Price = document.getElementById('price');
-var TBName = document.getElementById('name');
+var Name = document.getElementById('cname');
+var Number = document.getElementById('ccnum');
+var Year = Number(document.getElementById('expyear'));
+var Code = document.getElementById('cvv');
+var Card = document.getElementById('fname');
+var CYear = Number(new Date().getFullYear());
 
 var config = {
                   apiKey: "AIzaSyAmEbdMxefi-2wt7u8_hrFHLixM_RCLmwE",
@@ -19,14 +22,12 @@ var config = {
 var db = firebase.firestore();
 
 function reload(){
-  if (TBElement.value && AElement.value && PElement.value>0 && Description.value) {
-    upload().then(function(){
-      window,location.reload();
-   });
-    window.alert('You have successfully add this textbook to store!');
+  if (Card.value && Name.value && Number.value.length==16 && Code.value.length==3 && CYear.value<=Year.value) {
+    upload();
+    window.alert('Your payment was successfull');
   }
   else {
-    window.alert('Please enter all fields and price must be valid!');
+    window.alert('Invalid card');
     window,location.reload();
   }
 }
