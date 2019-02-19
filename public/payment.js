@@ -2,7 +2,7 @@ var dbElement = document.getElementById('Continue to checkout');
 dbElement.addEventListener('click', reload);
 
 var Name = document.getElementById('cname');
-var Number = document.getElementById('ccnum');
+var CNumber = document.getElementById('ccnum');
 var Year = Number(document.getElementById('expyear'));
 var Code = document.getElementById('cvv');
 var Card = document.getElementById('fname');
