@@ -2,9 +2,9 @@ var dbElement = document.getElementById('Continue to checkout');
 dbElement.addEventListener('click', reload);
 
 var Name = document.getElementById('cname');
-var CNumber = document.getElementById('ccnum');
+var CNumber = Number(document.getElementById('ccnum'));
 var Year = Number(document.getElementById('expyear'));
-var Code = document.getElementById('cvv');
+var Code = Number(document.getElementById('cvv'));
 var Card = document.getElementById('fname');
 var CYear = Number(new Date().getFullYear());
 var regex = /[0-9]{16}/;
