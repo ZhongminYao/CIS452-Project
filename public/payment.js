@@ -38,9 +38,8 @@ function authPayment(){
       });
       setTimeout(function(){window.location.href = "./buy.html";}, 100);
     }else{
-      window.alert(bookKey);
+      window.alert('Expired Date');
     }
-
   } else {
     window.alert('Invalid Card');
   }
