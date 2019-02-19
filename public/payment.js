@@ -34,12 +34,8 @@ function reload(){
 
 
 function upload() {
-  // Add a new message entry to the Firebase database.
+  // 
     return db.collection('Textbooks').add({
-      Title: TBElement.value,
-      Author: AElement.value,
-      Price: PElement.value,
-      Description: Description.value,
       Status: "Active"
    }).catch(function(error) {
      console.error('Error writing new message to Firebase Database', error);
