@@ -25,21 +25,10 @@ var db = firebase.firestore();
 
 function reload(){
   if (Card.value && Name.value && CNumber.value.match(regex) && Code.value.match(regex2) && CYear.value<=Year.value) {
-    upload();
     window.alert('Your payment was successfull');
   }
   else {
     window.alert('Invalid card');
     window,location.reload();
   }
-}
-
-
-function upload() {
-  // 
-    return db.collection('Textbooks').add({
-      Status: "Active"
-   }).catch(function(error) {
-     console.error('Error writing new message to Firebase Database', error);
-   });
 }
