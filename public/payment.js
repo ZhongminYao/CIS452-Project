@@ -1,14 +1,5 @@
-var dbElement = document.getElementById('Continue to checkout');
-dbElement.addEventListener('click', reload);
-
-var Name = document.getElementById('cname');
-var CNumber = Number(document.getElementById('ccnum'));
-var Year = Number(document.getElementById('expyear'));
-var Code = Number(document.getElementById('cvv'));
-var Card = document.getElementById('fname');
-var CYear = Number(new Date().getFullYear());
-var regex = /[0-9]{16}/;
-var regex2 = /[0-9]{3}/;
+var dbElement = document.getElementById('submitButton');
+dbElement.addEventListener('click', authPayment);
 
 var config = {
                   apiKey: "AIzaSyAmEbdMxefi-2wt7u8_hrFHLixM_RCLmwE",
@@ -23,12 +14,34 @@ var config = {
 
 var db = firebase.firestore();
 
-function reload(){
-  if (Card.value && Name.value && CNumber.value.match(regex) && Code.value.match(regex2) && CYear.value<=Year.value) {
-    window.alert('Your payment was successfull');
-  }
-  else {
-    window.alert('Invalid card');
-    window,location.reload();
+var Name = document.getElementById('cname');
+var CNumber = document.getElementById('ccnum');
+var Year = Number(document.getElementById('expyear').value);
+var Code = document.getElementById('cvv');
+var Card = document.getElementById('fname');
+var CYear = new Date().getFullYear();
+var regex = /[0-9]{16}/;
+var regex2 = /[0-9]{3}/;
+var bookKey = window.location.hash.substr(1);
+
+function authPayment(){
+  var Name = document.getElementById('cname');
+  var CNumber = document.getElementById('ccnum');
+  var Year = Number(document.getElementById('expyear').value);
+  var Code = document.getElementById('cvv');
+  var Card = document.getElementById('fname');
+  var CYear = new Date().getFullYear();
+  if (Card.value && Name.value && (CNumber.value).match(regex) && (Code.value).match(regex2)) {
+    if(CYear <= Year){
+      db.collection('Textbooks').doc(bookKey).update({
+        Status: 'Sold'
+      });
+      setTimeout(function(){window.location.href = "./buy.html";}, 100);
+    }else{
+      window.alert(bookKey);
+    }
+
+  } else {
+    window.alert('Invalid Card');
   }
 }

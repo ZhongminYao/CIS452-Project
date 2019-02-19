@@ -1,5 +1,17 @@
 <!DOCTYPE html>
-<html>
+    <html lang="en" dir="ltr">
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.8.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.8.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.8.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.8.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.8.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- use the stylesheet for adding some image labels-->
@@ -116,7 +128,7 @@ span.price {
 <div class="row">
   <div class="col-75">
     <div class="container">
-      <form action="AfterPayment.html">
+      <form>
 
         <div class="row">
           <div class="col-50">
@@ -173,7 +185,7 @@ span.price {
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Billing address same as shipping address
         </label>
-          <input type="submit" value="Complete Purchase" class="btn">
+          <input id="submitButton" type="button" value="Complete Purchase" class="btn">
         <script src="payment.js"></script>
       </form>
     </div>
