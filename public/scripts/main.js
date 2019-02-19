@@ -1,4 +1,3 @@
-
 'use strict';
 
 // Signs-in Friendly Chat.
