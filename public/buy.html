@@ -149,6 +149,11 @@
             });
           });
         }
+        function signOut() {
+          // Sign out of Firebase.
+          firebase.auth().signOut();
+          window.location.href = './index.html'
+        }
         </script>
 
         <style>
@@ -223,6 +228,13 @@
             border: 1px solid #ccc;
           }
         }
+        buttonLogOut {
+          background-color: #87CEFA; 
+          color: white; 
+          border: 2px solid white;
+          padding: 8px 32px;
+          font-size: 20px;
+        }
         </style>
         <header>
           <nav>
@@ -243,6 +255,7 @@
               </form>
             </div>
           </div>
+            <button class="buttonLogOut" type="button" onclick="signOut()" id="logout">log out</button>
         </header>
         <main>
           <table id="table">
