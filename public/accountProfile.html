@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html>
+	
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<!-- update the version number as needed -->
+<script defer src="/__/firebase/5.8.2/firebase-app.js"></script>
+<!-- include only the Firebase features as you need -->
+<script defer src="/__/firebase/5.8.2/firebase-auth.js"></script>
+<script defer src="/__/firebase/5.8.2/firebase-database.js"></script>
+<script defer src="/__/firebase/5.8.2/firebase-messaging.js"></script>
+<script defer src="/__/firebase/5.8.2/firebase-storage.js"></script>
+<!-- initialize the SDK after all desired features are loaded -->
+<script defer src="/__/firebase/init.js"></script>
+
 <head>
 <style>
 .card {
@@ -46,6 +58,25 @@ button:hover {
 </style>
 </head>
 <body>
+	
+<script>
+var config = {
+	apiKey: "AIzaSyAmEbdMxefi-2wt7u8_hrFHLixM_RCLmwE",
+	authDomain: "cis-454.firebaseapp.com",
+	databaseURL: "https://cis-454.firebaseio.com",
+	projectId: "cis-454",
+	storageBucket: "cis-454.appspot.com",
+	messagingSenderId: "737490005392"
+};
+// initialize the app and create a database object
+firebase.initializeApp(config);
+
+function signOut() {
+          // Sign out of Firebase.
+          firebase.auth().signOut();
+          window.location.href = './index.html'
+        }
+</script>
 
 <h1 class= "Title" style="text-align:center; color:#87CEFA;">Account Information</h1>
 
@@ -54,6 +85,7 @@ button:hover {
   <p class="ID">Account ID:</p>
   <p class="Google">Linked Google Account:</p>
   <p><button onclick="location.href = './home.html';">Done</button></p>
+  <p><button class="buttonLogOut" type="button" onclick="signOut()" id="logout">log out</button></p>
 </div>
 
 </body>
