@@ -36,7 +36,7 @@ function authPayment(){
       db.collection('Textbooks').doc(bookKey).update({
         Status: 'Sold'
       });
-      setTimeout(function(){window.location.href = "./buy.html";}, 100);
+      setTimeout(function(){window.location.href = "./buy.html";}, 500);
     }else{
       window.alert('Expired Date');
     }
