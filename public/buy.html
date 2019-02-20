@@ -112,7 +112,7 @@
               var actualDoc = doc;
               // get individual fields
 
-              if (data.Status == 'Active'&& (data.Title.includes(searchInput.value) || data.Author.includes(searchInput.value))){
+              if (data.Status == 'Active'&& (data.Title.toLowerCase().indexOf(searchInput.value.toLowerCase()) >= 0 || data.Author.toLowerCase().indexOf(searchInput.value.toLowerCase()) >= 0)){
                 //var id = doc.snapshot.key;
                 var title = data.Title;
                 var author = data.Author;
